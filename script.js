@@ -10,45 +10,8 @@ const petalLayer = document.querySelector(".floating-petals");
 const photoCards = document.querySelectorAll(".photo-card");
 const photos = document.querySelectorAll(".photo-card img");
 const coverPhoto = document.querySelector(".cover-photo");
-const main = document.querySelector("main");
-const panels = Array.from(document.querySelectorAll(".panel"));
-let activePanelIndex = 0;
 
 music.volume = 0.35;
-
-function goToPanel(targetSelector) {
-  const target = document.querySelector(targetSelector);
-  const targetIndex = panels.indexOf(target);
-
-  if (!main || targetIndex < 0) {
-    return;
-  }
-
-  activePanelIndex = targetIndex;
-  main.style.transform = `translateY(${-activePanelIndex * 100}dvh)`;
-  target.scrollTop = 0;
-  history.replaceState(null, "", targetSelector);
-}
-
-window.addEventListener(
-  "keydown",
-  (event) => {
-    if (["ArrowDown", "ArrowUp", "PageDown", "PageUp", "Home", "End", " "].includes(event.key)) {
-      event.preventDefault();
-    }
-  },
-  { passive: false }
-);
-
-window.addEventListener("resize", () => {
-  if (main) {
-    main.style.transform = `translateY(${-activePanelIndex * 100}dvh)`;
-  }
-});
-
-if (window.location.hash) {
-  goToPanel(window.location.hash);
-}
 
 if (showEnvelopeButton && invitationIntro && envelopeScene) {
   showEnvelopeButton.addEventListener("click", () => {
@@ -71,7 +34,7 @@ if (openButton) {
 
 document.querySelectorAll("[data-scroll]").forEach((button) => {
   button.addEventListener("click", () => {
-    goToPanel(button.dataset.scroll);
+    document.querySelector(button.dataset.scroll).scrollIntoView({ behavior: "smooth" });
   });
 });
 
