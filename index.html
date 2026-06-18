@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Luis & Jessica | Invitacion de Matrimonio</title>
+    <title>Luis & Jessica | Invitación de Matrimonio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=48" />
+    <link rel="stylesheet" href="styles.css?v=73" />
   </head>
   <body>
     <div class="floating-petals" aria-hidden="true"></div>
@@ -18,6 +18,28 @@
     <audio id="backgroundMusic" loop preload="auto">
       <source src="musica/matisse247.mp3" type="audio/mpeg" />
     </audio>
+    <section class="entry-screen" id="entryScreen" aria-label="Abrir invitación">
+      <div class="entry-card">
+        <p class="soft-label">Luis & Jessica</p>
+        <h2>Abrir invitación</h2>
+        <p>Con mucho cariño queremos compartir contigo este día especial.</p>
+        <button class="open-invitation-button" id="startInvitation" type="button">
+          <span class="open-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></svg>
+          </span>
+          <span>Ingresar</span>
+        </button>
+      </div>
+    </section>
+    <button class="music-button music-floating" id="toggleMusic" type="button" aria-label="Reproducir música" title="Reproducir música">
+      <span class="music-icon music-icon-play" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M9 7.5v9l7-4.5-7-4.5Z" /></svg>
+      </span>
+      <span class="music-icon music-icon-pause" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M9 7v10" /><path d="M15 7v10" /></svg>
+      </span>
+      <span class="music-label">Música</span>
+    </button>
 
     <main>
       <section class="panel hero-panel" id="portada">
@@ -28,15 +50,15 @@
           <div class="rings"></div>
         </div>
         <div class="section-content center">
-          <p class="soft-label">Con la bendicion de Dios</p>
+          <p class="soft-label">Con la bendición de Dios</p>
           <h1>Luis & Jessica</h1>
           <p class="couple-phrase">
-            El amor nos encontro, Dios nos guio y hoy decidimos caminar juntos para siempre.
+            El amor nos encontró, Dios nos guió y hoy decidimos caminar juntos para siempre.
           </p>
-          <p class="hero-date">Sabado 25 de julio del 2026</p>
+          <p class="hero-date">Sábado 25 de julio del 2026</p>
           <figure class="hero-photo-frame">
             <img
-              src="fotos/foto8.jpg"
+              src="fotos/foto5.jpg"
               alt="Foto principal de Luis y Jessica"
               onerror="this.classList.add('is-missing')"
             />
@@ -52,13 +74,13 @@
 
       <section class="panel blessing-panel" id="bendicion">
         <div class="section-content center narrow">
-          <span class="section-icon church-icon" aria-hidden="true"></span>
-          <p class="soft-label">Nuestro si ante Dios</p>
+          <span class="section-icon church-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M7 8h10" /></svg></span>
+          <p class="soft-label">Nuestro sí ante Dios</p>
           <h2>Una promesa para toda la vida</h2>
           <p>
-            Con mucha alegria queremos compartir contigo el inicio de nuestra
-            vida matrimonial. Tu compania, tus oraciones y tu carino haran de
-            este dia un recuerdo aun mas especial.
+            Con mucha alegría queremos compartir contigo el inicio de nuestra
+            vida matrimonial. Tu compañía, tus oraciones y tu cariño harán de
+            este día un recuerdo aún más especial.
           </p>
           <button class="ghost-button" type="button" data-scroll="#ceremonia">Ceremonia</button>
         </div>
@@ -68,7 +90,7 @@
         <div class="section-content center">
           <p class="soft-label">Nuestra historia</p>
           <h2>Momentos juntos</h2>
-          <div class="photo-grid" aria-label="Galeria de fotografias">
+          <div class="photo-grid" aria-label="Galería de fotografías">
             <figure class="photo-card photo-main">
               <img src="fotos/foto1.jpg" alt="Foto de Luis y Jessica" />
               <figcaption>Luis & Jessica</figcaption>
@@ -87,39 +109,36 @@
       </section>
 
       <section class="panel ceremony-panel" id="ceremonia">
-        <div class="section-content split">
+        <div class="section-content center narrow">
           <div class="ceremony-copy">
-            <span class="section-icon church-icon" aria-hidden="true"></span>
+            <span class="section-icon church-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M7 8h10" /></svg></span>
             <p class="soft-label">Ceremonia religiosa</p>
-            <h2>Parroquia San Miguel de Simon Bolivar</h2>
+            <h2 class="place-title"><span>Parroquia</span><span>San Miguel Arcángel</span></h2>
             <span class="ceremony-time">Ceremonia a las 12:30 pm</span>
             <p>
               Nos uniremos en santo matrimonio y queremos que seas parte de este
               momento tan especial.
             </p>
-            <div class="location-card ceremony-location">
+            <div class="location-card location-card-featured ceremony-location">
               <div class="location-copy">
-                <small>Ubicacion de la ceremonia</small>
-                <strong>Parroquia San Miguel de Simon Bolivar</strong>
+                <small>Hora de la ceremonia</small>
+                <strong>12:30 pm</strong>
+                <em>Nos uniremos en santo matrimonio</em>
               </div>
               <a
-                class="location-link"
+                class="location-link route-link"
                 href="https://maps.app.goo.gl/4fzDFCzzpHt5MZtG6"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Ver ubicacion de la ceremonia"
+                aria-label="Ver ubicación de la ceremonia"
               >
-                <span class="location-pin" aria-hidden="true"></span>
-                <span>Ver ubicacion</span>
+                <span class="location-pin" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M12 21s7-5.5 7-12a7 7 0 0 0-14 0c0 6.5 7 12 7 12Z" /><circle cx="12" cy="9" r="2.5" /></svg>
+                </span>
+                <span>Cómo llegar</span>
               </a>
             </div>
-            <button class="ghost-button" type="button" data-scroll="#recepcion">Ver recepcion</button>
-          </div>
-          <div class="detail-block">
-            <span class="mini-icon cross-icon" aria-hidden="true"></span>
-            <span class="detail-number">25</span>
-            <span class="detail-month">Julio 2026</span>
-            <span class="detail-note">Guarda la fecha</span>
+            <button class="ghost-button" type="button" data-scroll="#recepcion">Ver recepción</button>
           </div>
         </div>
       </section>
@@ -128,29 +147,31 @@
         <div class="moving-water" aria-hidden="true"></div>
         <div class="section-content center">
           <div class="reception-card">
-            <span class="section-icon celebration-icon" aria-hidden="true"></span>
-            <p class="soft-label">Celebracion</p>
-            <h2>Fundo Alto del Rio</h2>
-            <span class="reception-time">Recepcion desde las 3:00 pm</span>
+            <span class="section-icon celebration-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 3h8v5a4 4 0 0 1-8 0V3Z" /><path d="M12 12v7M8 21h8" /></svg></span>
+            <p class="soft-label">Celebración</p>
+            <h2>Fundo Alto del Río</h2>
+            <span class="reception-time">Recepción desde las 3:00 pm</span>
             <p>
-              Despues de la ceremonia compartiremos una recepcion preparada con
-              mucho carino para celebrar juntos.
+              Después de la ceremonia compartiremos una recepción preparada con
+              mucho cariño para celebrar juntos.
             </p>
-            <div class="location-card">
+            <div class="location-card location-card-featured">
               <div class="location-copy">
-                <small>Ubicacion de la recepcion</small>
-                <strong>Prolongacion Av. Caracas s/n</strong>
-                <em>Jose Luis Bustamante y Rivero</em>
+                <small>Dirección de la recepción</small>
+                <strong>Prolongación Av. Caracas s/n</strong>
+                <em>José Luis Bustamante y Rivero</em>
               </div>
               <a
-                class="location-link"
+                class="location-link route-link"
                 href="https://maps.app.goo.gl/x5BN72DkJ8j2kFK18"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Ver ubicacion de la recepcion"
+                aria-label="Ver ubicación de la recepción"
               >
-                <span class="location-pin" aria-hidden="true"></span>
-                <span>Ver ubicacion</span>
+                <span class="location-pin" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M12 21s7-5.5 7-12a7 7 0 0 0-14 0c0 6.5 7 12 7 12Z" /><circle cx="12" cy="9" r="2.5" /></svg>
+                </span>
+                <span>Cómo llegar</span>
               </a>
             </div>
             <button class="ghost-button" type="button" data-scroll="#itinerario">Ver itinerario</button>
@@ -160,20 +181,20 @@
 
       <section class="panel itinerary-panel" id="itinerario">
         <div class="section-content center">
-          <p class="soft-label">Momentos del dia</p>
+          <p class="soft-label">Momentos del día</p>
           <h2>Itinerario</h2>
           <div class="timeline">
             <article class="timeline-item">
               <span class="timeline-time">12:30 pm</span>
-              <span class="timeline-icon timeline-church" aria-hidden="true"></span>
+              <span class="timeline-icon timeline-church" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M7 8h10" /></svg></span>
               <div>
                 <strong>Ceremonia religiosa</strong>
-                <p>Parroquia San Miguel de Simon Bolivar</p>
+                <p>Parroquia San Miguel Arcángel</p>
               </div>
             </article>
             <article class="timeline-item">
               <span class="timeline-time">2:15 pm</span>
-              <span class="timeline-icon timeline-photo" aria-hidden="true"></span>
+              <span class="timeline-icon timeline-photo" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 8h4l2-2h4l2 2h4v10H4V8Z" /><circle cx="12" cy="13" r="3" /></svg></span>
               <div>
                 <strong>Fotos y saludos</strong>
                 <p>Un momento para compartir recuerdos con los novios.</p>
@@ -181,26 +202,26 @@
             </article>
             <article class="timeline-item">
               <span class="timeline-time">3:00 pm</span>
-              <span class="timeline-icon timeline-glass" aria-hidden="true"></span>
+              <span class="timeline-icon timeline-glass" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 3h8v5a4 4 0 0 1-8 0V3Z" /><path d="M12 12v7M8 21h8" /></svg></span>
               <div>
-                <strong>Recepcion</strong>
-                <p>Fundo Alto del Rio</p>
+                <strong>Recepción</strong>
+                <p>Fundo Alto del Río</p>
               </div>
             </article>
             <article class="timeline-item">
               <span class="timeline-time">4:00 pm</span>
-              <span class="timeline-icon timeline-dinner" aria-hidden="true"></span>
+              <span class="timeline-icon timeline-dinner" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10" cy="12" r="5" /><path d="M18 4v16M16 4v6M20 4v6" /></svg></span>
               <div>
                 <strong>Brindis y almuerzo</strong>
-                <p>Compartiremos la mesa y celebraremos este dia especial.</p>
+                <p>Compartiremos la mesa y celebraremos este día especial.</p>
               </div>
             </article>
             <article class="timeline-item">
               <span class="timeline-time">6:00 pm</span>
-              <span class="timeline-icon timeline-music" aria-hidden="true"></span>
+              <span class="timeline-icon timeline-music" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 18V6l10-2v12" /><circle cx="7" cy="18" r="2" /><circle cx="17" cy="16" r="2" /></svg></span>
               <div>
-                <strong>Baile y celebracion</strong>
-                <p>Musica, alegria y recuerdos junto a nuestros invitados.</p>
+                <strong>Baile y celebración</strong>
+                <p>Música, alegría y recuerdos junto a nuestros invitados.</p>
               </div>
             </article>
           </div>
@@ -214,15 +235,16 @@
           <h2>Indicaciones</h2>
           <div class="guest-notes" aria-label="Detalles para invitados">
             <div class="guest-note">
-              <span class="note-icon dress-icon" aria-hidden="true"></span>
-              <span class="note-label">Codigo de vestimenta</span>
+              <span class="note-icon dress-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 4h6l2 5-3 2 2 9H8l2-9-3-2 2-5Z" /></svg></span>
+              <span class="note-label">Código de vestimenta</span>
               <strong>Etiqueta estricta</strong>
+              <p>Agradecemos vestir de manera formal para acompañar la solemnidad de este día.</p>
             </div>
             <div class="guest-note">
-              <span class="note-icon adults-icon" aria-hidden="true"></span>
-              <span class="note-label">Celebracion</span>
+              <span class="note-icon adults-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3" /><circle cx="16" cy="9" r="2.5" /><path d="M4 20c.8-4 3-6 6-6s5 2 6 6" /><path d="M14 15c2.5.4 4.5 2 5.5 5" /></svg></span>
+              <span class="note-label">Celebración</span>
               <strong>Reservada para adultos</strong>
-              <p>Agradecemos que nos acompanen en una velada pensada para disfrutar con calma.</p>
+              <p>Agradecemos que nos acompañen en una velada pensada para disfrutar con calma.</p>
             </div>
           </div>
           <button class="ghost-button" type="button" data-scroll="#obsequios">Continuar</button>
@@ -235,12 +257,29 @@
           <h2>Mesa de regalos</h2>
           <p>
             Tu presencia es nuestro mejor regalo. Si deseas tener un detalle con nosotros,
-            puedes hacerlo en esta seccion.
+            puedes hacerlo en esta sección.
           </p>
           <div class="gift-card">
-            <span class="gift-icon" aria-hidden="true"></span>
-            <strong>Con mucho carino</strong>
-            <p>Pronto agregaremos aqui los datos para obsequios o regalos.</p>
+            <span class="gift-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 10h16v11H4V10Z" /><path d="M3 7h18v3H3V7Z" /><path d="M12 7v14" /><path d="M12 7C9 7 8 3 10.5 3 12 3 12 7 12 7Zm0 0s0-4 1.5-4C16 3 15 7 12 7Z" /></svg></span>
+            <strong>Con mucho cariño</strong>
+            <p>Si deseas hacernos llegar un detalle, puedes realizarlo mediante estas opciones.</p>
+            <div class="gift-accounts" aria-label="Datos para obsequios">
+              <div class="gift-row">
+                <span>BCP cuenta ahorros</span>
+                <b>21502361671022</b>
+              </div>
+              <div class="gift-row">
+                <span>BCP CCI</span>
+                <b>0022151023616710225</b>
+              </div>
+              <div class="gift-row">
+                <span>Billetera digital</span>
+                <b>946070777</b>
+              </div>
+              <div class="gift-owner">
+                Todas las cuentas a nombre de <strong>Luis Tacca</strong>
+              </div>
+            </div>
           </div>
           <button class="ghost-button" type="button" data-scroll="#asistencia">Continuar</button>
         </div>
@@ -248,16 +287,23 @@
 
       <section class="panel rsvp-panel" id="asistencia">
         <div class="section-content center">
-          <p class="soft-label">Confirmacion</p>
+          <p class="soft-label">Confirmación</p>
           <h2>Confirma tu asistencia</h2>
           <p>
-            Nos ayudara mucho saber si podremos contar contigo en este dia tan especial.
+            Nos ayudará mucho saber si podremos contar contigo en este día tan especial.
           </p>
           <div class="rsvp-card">
-            <span class="rsvp-icon" aria-hidden="true"></span>
+            <span class="rsvp-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M8 12.5l2.5 2.5L16 9" /></svg></span>
             <strong>Reserva tu lugar</strong>
-            <p>Muy pronto agregaremos aqui el enlace o numero para confirmar asistencia.</p>
-            <a class="rsvp-link" href="#" aria-disabled="true">Confirmar asistencia</a>
+            <p>Por favor completa el formulario para reservar tu lugar con nosotros.</p>
+            <a
+              class="rsvp-link"
+              href="https://forms.gle/jiE1kBuAWLHCJFnL6"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Confirmar asistencia
+            </a>
           </div>
           <button class="ghost-button" type="button" data-scroll="#confirmacion">Continuar</button>
         </div>
@@ -265,21 +311,21 @@
 
       <section class="panel countdown-panel" id="confirmacion">
         <div class="section-content center">
-          <span class="section-icon rings-icon" aria-hidden="true"></span>
+          <span class="section-icon rings-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="13" r="5" /><circle cx="15" cy="11" r="5" /></svg></span>
           <p class="soft-label">Faltan</p>
           <div class="countdown" id="countdown" aria-live="polite">
-            <div><strong id="days">00</strong><span>Dias</span></div>
+            <div><strong id="days">00</strong><span>Días</span></div>
             <div><strong id="hours">00</strong><span>Horas</span></div>
             <div><strong id="minutes">00</strong><span>Min</span></div>
             <div><strong id="seconds">00</strong><span>Seg</span></div>
           </div>
           <h2>Te esperamos</h2>
           <p>
-            Tu presencia hara mas hermosa nuestra alegria.
+            Tu presencia hará más hermosa nuestra alegría.
           </p>
           <div class="final-photo-frame">
             <img
-              src="fotos/foto5.jpg"
+              src="fotos/foto7.jpg"
               alt="Foto principal de Luis y Jessica"
               onerror="this.classList.add('is-missing')"
             />
@@ -291,12 +337,11 @@
           </div>
           <div class="actions">
             <button class="ghost-button" type="button" data-scroll="#portada">Volver al inicio</button>
-            <button class="music-button" id="toggleMusic" type="button">Pausar musica</button>
           </div>
         </div>
       </section>
     </main>
 
-    <script src="script.js?v=48"></script>
+    <script src="script.js?v=73"></script>
   </body>
 </html>
