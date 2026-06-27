@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --white: #fffdf8;
   --ivory: #f8f4ec;
   --dusty-blue: #102b4d;
@@ -1941,36 +1941,41 @@ p {
 
 .countdown {
   display: grid;
-  grid-template-columns: repeat(4, minmax(128px, 1fr));
+  grid-template-columns: repeat(2, minmax(150px, 1fr));
   gap: 18px;
-  margin: 6px auto 44px;
-  width: min(900px, 100%);
+  margin: 12px auto 48px;
+  width: min(600px, 100%);
 }
 
 .countdown div {
   position: relative;
-  min-height: 152px;
+  min-height: 146px;
   display: grid;
-  place-items: center;
+  justify-items: center;
   align-content: center;
-  padding: 24px 18px 22px;
-  border: 1px solid rgba(194, 164, 92, 0.34);
+  gap: 16px;
+  padding: 30px 18px 26px;
+  border: 1px solid rgba(185, 157, 92, 0.22);
   border-radius: 8px;
   background:
-    linear-gradient(rgba(255, 253, 248, 0.9), rgba(255, 253, 248, 0.9)),
-    radial-gradient(circle at 50% 0%, rgba(143, 164, 134, 0.16), transparent 48%);
-  box-shadow: 0 20px 42px rgba(61, 64, 47, 0.1);
+    linear-gradient(180deg, rgba(255, 254, 250, 0.98), rgba(247, 251, 252, 0.92)),
+    radial-gradient(circle at 50% -18%, rgba(166, 190, 202, 0.22), transparent 56%);
+  box-shadow:
+    0 18px 42px rgba(39, 56, 68, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.82);
   overflow: hidden;
 }
 
-.countdown div::before,
-.countdown div::after {
+.countdown div::before {
   content: "";
   position: absolute;
-  left: 18px;
-  right: 18px;
+  top: 18px;
+  left: 50%;
+  width: 62px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(194, 164, 92, 0.72), transparent);
+  background: linear-gradient(90deg, transparent, rgba(182, 149, 74, 0.72), transparent);
+  transform: translateX(-50%);
+  pointer-events: none;
 }
 
 .countdown div > * {
@@ -1978,38 +1983,31 @@ p {
   z-index: 1;
 }
 
-.countdown div::before {
-  top: 16px;
-}
-
-.countdown div::after {
-  bottom: 16px;
-}
-
 .countdown strong {
-  width: min(100%, 116px);
-  min-height: 74px;
-  display: grid;
-  place-items: center;
-  padding: 6px 10px 10px;
-  border-radius: 6px;
-  background: rgba(248, 244, 236, 0.58);
-  border: 1px solid rgba(194, 164, 92, 0.16);
+  display: block;
+  min-width: 88px;
+  padding: 0 4px;
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(3rem, 5.8vw, 5.1rem);
-  line-height: 0.78;
-  color: #806737;
-  text-shadow: 0 10px 18px rgba(107, 84, 48, 0.12);
+  font-size: clamp(3.35rem, 6vw, 4.95rem);
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  color: #8a6b31;
+  text-shadow: 0 9px 18px rgba(107, 84, 48, 0.1);
   font-variant-numeric: tabular-nums;
 }
 
 .countdown span {
-  margin-top: 14px;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
+  display: block;
+  min-width: 0;
+  margin-top: 0;
+  padding: 0;
+  background: transparent;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.17em;
   text-transform: uppercase;
-  color: #6f7f63;
+  color: #5f7783;
 }
 
 .guest-notes {
@@ -2398,6 +2396,18 @@ body:not(.invitation-started) .music-floating {
   letter-spacing: 0.12em;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+.whatsapp-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.whatsapp-actions .rsvp-link {
+  min-width: 168px;
 }
 
 .final-photo-frame {
@@ -2791,23 +2801,37 @@ body:not(.invitation-started) .music-floating {
   }
 
   .countdown {
-    grid-template-columns: repeat(2, minmax(132px, 1fr));
-    gap: 12px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 11px;
+    width: min(380px, 100%);
+    margin-top: 12px;
+    margin-bottom: 42px;
   }
 
   .countdown div {
-    min-height: 130px;
-    padding: 22px 12px 20px;
+    min-height: 124px;
+    gap: 12px;
+    padding: 25px 9px 22px;
+  }
+
+  .countdown div::before {
+    top: 14px;
+    width: 48px;
   }
 
   .countdown strong {
-    width: min(100%, 96px);
-    min-height: 62px;
-    font-size: clamp(2.6rem, 13vw, 4.2rem);
+    min-width: 0;
+    padding: 0 3px;
+    font-size: clamp(2.45rem, 10.2vw, 3.35rem);
+    line-height: 1;
   }
 
   .countdown span {
-    font-size: 0.68rem;
+    min-width: 0;
+    min-height: 0;
+    margin-top: 0;
+    padding: 0;
+    font-size: 0.58rem;
     letter-spacing: 0.13em;
   }
 
@@ -3179,18 +3203,22 @@ body:not(.invitation-started) .music-floating {
 
   .countdown {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
+    gap: 9px;
+    width: min(336px, 100%);
   }
 
   .countdown div {
     min-height: 116px;
-    padding: 20px 8px 18px;
+    padding: 23px 7px 21px;
   }
 
   .countdown strong {
-    width: min(100%, 82px);
-    min-height: 56px;
-    font-size: clamp(2.45rem, 13vw, 3.65rem);
+    font-size: clamp(2.22rem, 9.8vw, 2.95rem);
+  }
+
+  .countdown span {
+    font-size: 0.55rem;
+    letter-spacing: 0.1em;
   }
 
   .guest-notes {
@@ -3247,6 +3275,15 @@ body:not(.invitation-started) .music-floating {
     padding-right: 18px;
     white-space: normal;
   }
+
+  .whatsapp-actions {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .whatsapp-actions .rsvp-link {
+    width: min(260px, 100%);
+  }
 }
 
 @media (max-width: 380px) {
@@ -3265,7 +3302,7 @@ body:not(.invitation-started) .music-floating {
   }
 
   .countdown strong {
-    font-size: clamp(2.2rem, 12vw, 3.2rem);
+    font-size: clamp(2rem, 9.2vw, 2.65rem);
   }
 
   .timeline-item > div {
@@ -3283,3 +3320,6 @@ body:not(.invitation-started) .music-floating {
     transition-duration: 0.001ms !important;
   }
 }
+
+
+
